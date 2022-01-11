@@ -38,11 +38,15 @@ Our Slack Channel is on the NCATS instance and is called: 2022_spring_coding_cam
 Instructions on how to communicate via GitHub and Slack will be provided in the introductory lectures.
 
 ## High-level timeline:
-__Camp Prep__: Read over project ideas, click here
-__Week1 (9 am)__: Introduction, finalize project selection and timeline, get set up on GitHub/Slack
-__Week 2__: Set up your environment to complete project, finalize timeline, work on your first task
-__Weeks 3-6__: Keep working on tasks, revise timeline as appropriate
-__Week 7/8__: Final project presentation prep and presentations
+
+- __Camp Prep__: Read over project ideas, click here
+- __Week1 (9 am)__: Introduction, finalize project selection and timeline, get set up on GitHub/Slack
+- __Week 2__: Set up your environment to complete project, finalize timeline, work on your first task
+- __Weeks 3-6__: Keep working on tasks, revise timeline as appropriate
+- __Week 7/8__: Final project presentation prep and presentations
+
+## Some useful links:
+We've started a document to document some useful resources that related to programming.  Click [here](https://docs.google.com/document/d/1GmnAne6Pk0AkqnJsj9ha9h4zJhxn75hBDpUdwBckDuk/edit#heading=h.ars36iw8ugsw) to access.
 
 ## Questions/Concerns?
 Please contact Ewy at ewy.mathe@nih.gov
