@@ -26,7 +26,7 @@ Each participant will be choosing a teaching assistant (TA) to work with for the
 - Arjun Yadaw 
 - Tongan Zhao
 
-For more information on the projects offered by each TA, click [here](https://docs.google.com/document/d/1GmnAne6Pk0AkqnJsj9ha9h4zJhxn75hBDpUdwBckDuk/edit#heading=h.ih4rfig3hmtc).  
+For more information on the projects offered by each TA, click [here](https://docs.google.com/document/d/1C6YMD0dDfK3k1L_pQzANSpoNe8D4MiQULAy7NOSUB24/edit).  
 
 _Important note_: these projects are offered as examples and are particularly useful for participants that may not have a clear idea of what they would like to work on.  If participants have a data set or a clear project they would like to develop throughout this camp, we can certainly accommodate this and find a TA that matches required skills for guidance.
 
