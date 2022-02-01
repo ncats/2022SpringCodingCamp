@@ -1,7 +1,7 @@
 # 2022 NCATS Spring Coding Camp
 
 ## Course Goals
-The goal of the camp is to provide assisted learning in coding concepts.  The camp tailors to beginner or seasoned computational experts and no previous experience is required.  
+The goal of the camp is to provide assisted learning in coding concepts.  The camp tailors to beginner or seasoned computational experts and no previous experience is required.
 
 At the end of this course, participants will have been introduced to GitHub and team coding best practices.  Depending on their level of proficiency in programming prior to starting the camp, the expectation is for participants to have advanced their knowledge and skills in a particular language or application of software/code of their choice.
 
@@ -23,7 +23,7 @@ Each participant will be choosing a teaching assistant (TA) to work with for the
 - Vishal Siramshetty
 - Kyle Spencer/Cole Tindall
 - Mark Williams
-- Arjun Yadaw 
+- Arjun Yadaw
 - Tongan Zhao
 
 For more information on the projects offered by each TA, click [here](https://docs.google.com/document/d/1C6YMD0dDfK3k1L_pQzANSpoNe8D4MiQULAy7NOSUB24/edit).  
@@ -31,8 +31,8 @@ For more information on the projects offered by each TA, click [here](https://do
 _Important note_: these projects are offered as examples and are particularly useful for participants that may not have a clear idea of what they would like to work on.  If participants have a data set or a clear project they would like to develop throughout this camp, we can certainly accommodate this and find a TA that matches required skills for guidance.
 
 ### Working Environment:
-We will rely on GitHub and Slack for communication throughout this course.  
-Our GitHub site is: https://github.com/ncats/20222SpringCodingCamp
+We will rely on GitHub and Slack for communication throughout this course.
+Our GitHub site is: https://github.com/ncats/2022SpringCodingCamp
 Our Slack Channel is on the NCATS instance and is called: 2022_spring_coding_camp
 
 Instructions on how to communicate via GitHub and Slack will be provided in the introductory lectures.
