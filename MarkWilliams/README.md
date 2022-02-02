@@ -7,4 +7,5 @@ Mark Williams (Python or Java):
 * Automating database interactions
 * Organizing data with Pandas
 * Making a text adventure like Zork
+
 Just some examples, I’m willing to work with any reasonable project or even just some basic learning about coding with toy projects.
