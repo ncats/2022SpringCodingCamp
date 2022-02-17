@@ -1,0 +1,50 @@
+Package: ALTRE
+Type: Package
+Title: Workflow for Identifying Regulatory Elements from Chromatin Accessibility Assay Data
+Version: 0.99.0
+Authors@R: c(
+ person("Elizabeth", "Baskin", email = "Elizabeth.Baskin@osumc.edu", role = "aut"),
+ person("Rick", "Farouni", email = "farouni.1@osu.edu", role = "aut"),
+ person("Ewy", "Mathe", email = "Ewy.Mathe@osumc.edu", role = c("aut", "cre")))
+Description: This workflow takes alignment data and hotspot calls from assays of
+ open chromatin (ATAC-seq, DNase-seq, and FAIRE-seq) and identifies candidate regulatory
+ elements (e.g. TSS-distal and TSS-proximal) that differ across cell and tissue type.
+URL: https://github.com/Mathelab/ALTRE
+BugReports: https://github.com/Mathelab/ALTRE/issues
+Depends: R (>= 3.2.0)
+Suggests: Rsubread
+Imports:
+    shiny,
+    shinydashboard,
+    rmarkdown,
+    shinyFiles,
+    methods,
+    S4Vectors,
+    GenomeInfoDb,
+    IRanges,
+    DESeq2,
+    GenomicAlignments,
+    SummarizedExperiment,
+    GenomicRanges,
+    Rsamtools,
+    readr,
+    org.Hs.eg.db,
+    ensembldb,
+    AnnotationFilter,
+    EnsDb.Hsapiens.v75,
+    tidyr,
+    dplyr,
+    GO.db,
+    grid,
+    stringr,
+    tibble,
+    magrittr,
+    highcharter,
+    htmltools,
+    rGREAT,
+    RColorBrewer
+License: GPL-2
+BiocViews: Visualization, Annotation, Software, AnnotationData, FunctionalAnnotation
+LazyData: TRUE
+RoxygenNote: 6.0.1
+NeedsCompilation: no
