@@ -24,7 +24,7 @@
 
 
 getConsensusPeaks <- function(samplepeaks, minreps) {
-  if (class(samplepeaks) != "GRangesList")
+  if (class(samplepeaks) != "CompressedGRangesList")
     stop("Peaks must be a GRangesList Object")
 
   sampnames <- names(samplepeaks)
