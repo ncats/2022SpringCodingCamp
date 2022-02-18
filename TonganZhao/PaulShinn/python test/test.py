@@ -19,9 +19,14 @@ def readCSVFile(FileName):
 				print(f'Column names are {", ".join(row)}')
 				line_count+=1
 			else:
-				print(f'\t{row[1]}')
+				print(f'{row[1]}, {row[2]}, {row[4]}, {row[5]}, {row[3]}')
 				line_count+=1
 		print(f'Processed {line_count} lines')
+
+def readCSVFile2(FileName):
+	import pandas
+	df=pandas.read_csv(FileName)
+	print(df)
 
 def Main():
 	print("Started")
@@ -34,7 +39,11 @@ def Main():
 	#f = open(FileName, "rt")	
 	#print(f.read())
 
+	#read a CSV through regular file reader
 	readCSVFile(FileName)
+
+	#read a CSV using pandas
+	readCSVFile2(FileName)
 
 # now we are required to tell Python
 # for 'Main' function existence
