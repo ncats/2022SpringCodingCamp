@@ -6,7 +6,7 @@ namespace VS_Code_Playground
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World! You look good.");
+            Console.WriteLine("Hello World!");
         }
     }
 }
