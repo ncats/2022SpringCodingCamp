@@ -23,10 +23,11 @@ def readCSVFile(FileName):
 				line_count+=1
 		print(f'Processed {line_count} lines')
 
+#read the CSV using Pandas
 def readCSVFile2(FileName):
 	import pandas
 	df=pandas.read_csv(FileName)
-	print(df)
+	print(df['Plate'], df['Well'],df['Sample ID'],df['Concentration'])
 
 def Main():
 	print("Started")
@@ -40,7 +41,7 @@ def Main():
 	#print(f.read())
 
 	#read a CSV through regular file reader
-	readCSVFile(FileName)
+	#readCSVFile(FileName)
 
 	#read a CSV using pandas
 	readCSVFile2(FileName)
