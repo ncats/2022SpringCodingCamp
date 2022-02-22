@@ -1,12 +1,9 @@
-﻿using System;
+﻿using ETL_Playground;
 
-namespace VS_Code_Playground
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
-    }
+CampDBConnection db = new CampDBConnection();
+db.Open();
+PubChemFetcher fetcher = new PubChemFetcher();
+foreach (string name in db.getLigandList()){
+    Console.WriteLine(fetcher.fetchDetails(name));
 }
+db.Close();
