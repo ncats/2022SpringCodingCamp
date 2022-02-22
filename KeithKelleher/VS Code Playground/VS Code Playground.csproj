@@ -8,4 +8,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.28" />
+    <PackageReference Include="NewtonSoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
 </Project>

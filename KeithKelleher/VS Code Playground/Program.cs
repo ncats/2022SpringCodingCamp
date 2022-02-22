@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World! updated");
+﻿using ETL_Playground;
+
+CampDBConnection db = new CampDBConnection();
+db.Open();
+foreach (string name in db.getLigandList()){
+    Console.WriteLine(name);
+}
+db.Close();
