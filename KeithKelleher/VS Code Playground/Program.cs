@@ -2,7 +2,8 @@
 
 CampDBConnection db = new CampDBConnection();
 db.Open();
+PubChemFetcher fetcher = new PubChemFetcher();
 foreach (string name in db.getLigandList()){
-    Console.WriteLine(name);
+    Console.WriteLine(fetcher.fetchDetails(name));
 }
 db.Close();

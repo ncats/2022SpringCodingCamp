@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using MySql.Data.MySqlClient;
-using System.IO;
+﻿using MySql.Data.MySqlClient;
 
 namespace ETL_Playground
 {
