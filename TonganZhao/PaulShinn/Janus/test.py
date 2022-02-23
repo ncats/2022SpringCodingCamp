@@ -29,7 +29,6 @@ def readCSVFile(FileName):
 
 #read the CSV using Pandas
 def readCSVFile2(FileName):
-<<<<<<< HEAD
 	df=pd.read_csv(FileName)
 
 	print (len(df))
@@ -38,12 +37,6 @@ def readCSVFile2(FileName):
 		Conc=re.findall("\d+", row['Concentration'])
 		print(i, row['Plate'], row['Well'], row['Sample ID'], Conc, row['Barcode'])
 
-=======
-	import pandas as pd
-	df=pd.read_csv(FileName)
-	print(df['Plate'].to_string())
-	print("Max rows= ")
->>>>>>> ee61b6972e8613ca530299269bb6dc71f7949bf4
 
 def Main():
 	print("Started")
