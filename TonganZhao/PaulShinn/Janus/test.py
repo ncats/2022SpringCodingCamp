@@ -25,9 +25,10 @@ def readCSVFile(FileName):
 
 #read the CSV using Pandas
 def readCSVFile2(FileName):
-	import pandas
-	df=pandas.read_csv(FileName)
-	print(df['Plate'], df['Well'],df['Sample ID'],df['Concentration'])
+	import pandas as pd
+	df=pd.read_csv(FileName)
+	print(df['Plate'].to_string())
+	print("Max rows= ")
 
 def Main():
 	print("Started")
