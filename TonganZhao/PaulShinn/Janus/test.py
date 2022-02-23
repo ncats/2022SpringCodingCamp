@@ -1,5 +1,10 @@
 # Python program to illustrate
 # function with main
+
+import pandas as pd
+import csv
+import re
+
 def getFileName():
 	result = (input("Enter filename: "))
 	return result
@@ -9,8 +14,7 @@ def getFileName():
 #        print(step)
 
 def readCSVFile(FileName):
-	import csv
-
+	
 	with open(FileName) as csv_file:
 		csv_reader = csv.reader(csv_file, delimiter=',')
 		line_count=0
@@ -23,10 +27,23 @@ def readCSVFile(FileName):
 				line_count+=1
 		print(f'Processed {line_count} lines')
 
+#read the CSV using Pandas
 def readCSVFile2(FileName):
-	import pandas
-	df=pandas.read_csv(FileName)
-	print(df)
+<<<<<<< HEAD
+	df=pd.read_csv(FileName)
+
+	print (len(df))
+
+	for i, row in df.iterrows():
+		Conc=re.findall("\d+", row['Concentration'])
+		print(i, row['Plate'], row['Well'], row['Sample ID'], Conc, row['Barcode'])
+
+=======
+	import pandas as pd
+	df=pd.read_csv(FileName)
+	print(df['Plate'].to_string())
+	print("Max rows= ")
+>>>>>>> ee61b6972e8613ca530299269bb6dc71f7949bf4
 
 def Main():
 	print("Started")
@@ -40,7 +57,7 @@ def Main():
 	#print(f.read())
 
 	#read a CSV through regular file reader
-	readCSVFile(FileName)
+	#readCSVFile(FileName)
 
 	#read a CSV using pandas
 	readCSVFile2(FileName)
