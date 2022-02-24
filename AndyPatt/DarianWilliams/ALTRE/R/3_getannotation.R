@@ -56,7 +56,7 @@ combineAnnotatePeaks <- function(conspeaks,
                                  mergedist = 0,
                                  regionspecific = NA,
                                  distancefromTSS = 1500) {
-  if (class(conspeaks[[1]])[1] != "GRangesList") {
+  if (class(conspeaks[[1]])[1] != "CompressedGRangesList") {
     stop("The input conspeaks is not in the correct format!
          (try to rerun getConsensusPeaks())")
   }
