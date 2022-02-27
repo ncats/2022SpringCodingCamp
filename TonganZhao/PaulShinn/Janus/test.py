@@ -6,8 +6,8 @@ import csv
 import re
 
 def getFileName():
-	result = (input("Enter filename: "))
-	return result
+	input_file = (input("Enter filename: "))
+	return input_file
 
 #def PrintStep():
 #    for step in range(5):    
@@ -28,15 +28,31 @@ def readCSVFile(FileName):
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
+<<<<<<< HEAD
 def readCSVFile2(FileName):
+=======
+def readCSVFile2(FileName, outfile):
+>>>>>>> tongan
 	df=pd.read_csv(FileName)
 
 	print (len(df))
+	f=open(outfile, "w")
 
+	#reorganizes the columns in the CSV and
+	#extracts just the number from the concentration column
+	#before writing them to a file
 	for i, row in df.iterrows():
-		Conc=re.findall("\d+", row['Concentration'])
-		print(i, row['Plate'], row['Well'], row['Sample ID'], Conc, row['Barcode'])
+		Conc=re.findall("\d+", row['Concentration'])[0]
+		#row_to_write= (i, row['Plate'], row['Well'], row['Sample ID'], Conc, row['Barcode'])
+		row_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + str(row['Sample ID']) + "," + str(Conc) + "," + str(row['Barcode']) + "\n"
+		#print(row_to_write)
+		f.write(row_to_write)
 
+<<<<<<< HEAD
+=======
+
+	f.close()
+>>>>>>> tongan
 
 def Main():
 	print("Started")
@@ -49,11 +65,16 @@ def Main():
 	#f = open(FileName, "rt")	
 	#print(f.read())
 
+	#extracts the root file name and appends a 2 onto it
+	outfile=re.findall("(\S+).csv", FileName)[0] + "2.csv"
+	
+	print(outfile)
+
 	#read a CSV through regular file reader
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName)
+	readCSVFile2(FileName, outfile)
 
 # now we are required to tell Python
 # for 'Main' function existence
