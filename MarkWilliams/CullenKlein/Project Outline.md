@@ -18,8 +18,8 @@ Stretch Goals
 ## C Goals
 
 1. Take a BA DOSY Input
-    a. Create Test Data folder and place 1D and DOSY data inside
-    b. create project file directory structure
+  *  a. Create Test Data folder and place 1D and DOSY data inside
+  *  b. create project file directory structure
 2. Ingest Data
     a. read data file
     b. parse into data structures

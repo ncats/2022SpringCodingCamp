@@ -261,4 +261,4 @@ __pycache__/
 *.pyc
 
 db_credentials.json
-MarkWilliams/CullenKlein/.ipynb_checkpoints/
+MarkWilliams/CullenKlein/*/.ipynb_checkpoints/*

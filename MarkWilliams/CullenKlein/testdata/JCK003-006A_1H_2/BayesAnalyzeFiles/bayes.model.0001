@@ -1,0 +1,498 @@
+! File: "C:\Users\kleinjac\OneDrive - National Institutes of Health\ASPIRE\qNMR\BayesAnalyzeResults\ToRun\JCK003-006A_PROTON_02.fid"
+
+  31 Configuration Parameters
+
+    File Version   =       3.000
+    Fid File       = fid/fid
+    Procpar File   = fid/procpar
+    Analysis Dir   = BayesAnalyzeFiles
+    Model Dir      = Bayes.model.fid
+    Model Dir Org  = DATA 
+    Units          = PPM  
+    Activate Shims = YES
+    Activate Delay = YES
+    Data Type      = VNMR
+    Noise          = NO 
+    Output         = BRIEF
+    Default Model  = (UP)
+    First Fid      =           1
+    Last Fid       =           1
+    No Fids        =           1
+    Total Points   =       65536
+    Complex Points =       32768
+    Noise Start    =           0
+    Model Points   =      131072
+    Model Fid      =           1
+    Prior Odds     =           0.000
+    Sampling Time  =       4.0894465
+    Spec Freq      =         399.916
+    User Reference =          -8.000
+    True Reference =          -8.000
+    Total Models   =          76
+    Shim Order     =           3
+    Max Freqs      =          75
+    Max Candidates =           1
+    Default Lb     =     1.50000
+
+   4 Global Model Parameters
+
+    Shim Delta     = 0.6769395646264 0.7500000000000
+         R Minus 1 = 0.1280719388731
+         R Center  = 0.5479370251903
+         R Plus  1 = 0.3239910359365
+
+!   #  Name                       
+    1  Real Constant              
+
+!                                    Fid          Amplitude   
+                                       1        -0.007126552457
+
+!   #  Name                       
+    2  Imaginary Constant         
+
+!                                    Fid          Amplitude   
+                                       1        0.0043491037864
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    3  (UP) Singlet                (1,1) 0      0.8295814547951 0.8410487847003 23.395822042309 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -18.63563443131 27.922413619509
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    4  (UP) Singlet                (1,1) 0      0.9040727679533 0.9058633413130 2.5146722337982 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -10.28895685810 8.3825643924630
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    5  (UP) Singlet                (1,1) 0      0.9228810792426 0.9229841675881 2.5158086151400 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -21.10497763835 21.016894758410
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    6  (UP) Singlet                (1,1) 0      0.9410582056090 0.9413279100256 1.9270800138961 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -8.121114788244 8.6080353618727
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    7  (UP) Singlet                (1,1) 0      1.2233067876743 1.2225986274016 7.0555329561133 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -8.261577901934 21.350935075118
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    8  (UP) Singlet                (1,1) 0      1.2925771061418 1.2201527950766 24.527382325375 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -46.14335319070 49.051255719931
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    9  (UP) Singlet                (1,1) 0      1.5557623898909 1.5564547397653 9.2651839218061 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -32.60960116385 38.791520087173
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   10  (UP) Singlet                (1,1) 0      2.0847402382958 2.0859774381296 2.4418049281122 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -80.70718127016 44.586263206267
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   11  (UP) Singlet                (1,1) 0      2.0906109622826 2.0933149351046 2.4064507763220 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        19.182150816174 22.408110917071
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   12  (UP) Singlet                (1,1) 0      2.4816812794176 2.4773106101309 4.6212434940893 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -346.4444591514 -62.20703680410
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   13  (UP) Singlet                (1,1) 0      2.4896948764774 2.4895397717560 4.0888824456343 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -309.4424595555 314.11627919169
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   14  (UP) Singlet                (1,1) 0      2.4980028380727 2.4907626879185 4.7434562115056 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        124.02761766114 355.67399572876
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   15  (UP) Singlet                (1,1) 0      2.5447279209875 2.5445709990687 3.3028948791678 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -7.483969329177 12.108391413799
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   16  (UP) Singlet                (1,1) 0      2.7073496604519 2.7072188486817 0.7469873485823 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        9.0232262046559 -3.577063519748
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   17  (UP) Singlet                (1,1) 0      2.7151378242507 2.7096646810067 1.9915150293786 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -405.5958682696 348.08980748674
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   18  (UP) Singlet                (1,1) 0      2.7175968008143 2.7194480103068 1.3735361226863 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -783.5512926763 227.34281184169
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   19  (UP) Singlet                (1,1) 0      2.7226642880229 2.7267855072818 2.0014688742523 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        152.15510948060 582.23418020812
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   20  (UP) Singlet                (1,1) 0      2.8734237203191 2.8686437821323 2.5559755215642 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -509.6241726000 9.9279564576097
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   21  (UP) Singlet                (1,1) 0      2.8770631468177 2.8784271114323 1.3995851098595 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -611.3027172666 549.57903526855
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   22  (UP) Singlet                (1,1) 0      2.8820493160765 2.8857646084074 1.5425088868452 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        162.06984297314 389.76246189241
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   23  (UP) Singlet                (1,1) 0      2.8827371312409 2.8906562730574 5.3712186378008 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -59.68278608082 208.47349802537
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   24  (UP) Singlet                (1,1) 0      3.0479816993600 3.0484124580204 1.8983367246046 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -4.610790427088 7.3970266804802
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   25  (UP) Singlet                (1,1) 0      3.1223427476351 3.1254561762582 6.2332484337542 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -11.09405133446 -4.278203180633
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   26  (UP) Singlet                (1,1) 0      3.1711169982074 3.1731499065958 17.067539791011 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        10.641351162225 41.405434829596
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   27  (UP) Singlet                (1,1) 0      3.2759382288258 3.2758748642462 2.2735894869039 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -19.85762627837 24.807595907397
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   28  (UP) Singlet                (1,1) 0      3.3287734587324 3.3223456784214 1.3350776536024 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -516.0565043641 198.41100234674
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   29  (UP) Singlet                (1,1) 0      3.3295679055374 3.3186769299338 5.7355891675759 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -445.2280958504 371.84010270132
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   30  (UP) Singlet                (1,1) 0      3.3316008912280 3.3260144269089 0.9693497417185 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -621.4212241806 465.35144854908
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   31  (UP) Singlet                (1,1) 0      3.3325104806502 3.3198998460963 0.8925794772902 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -597.3741014658 498.76621094080
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   32  (UP) Singlet                (1,1) 0      3.3336511523491 3.3186769299338 0.9281414645588 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -549.5720168942 538.72664192490
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   33  (UP) Singlet                (1,1) 0      3.3345334303649 3.3088936006338 0.6863082226748 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -531.7074426197 578.87685057738
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   34  (UP) Singlet                (1,1) 0      3.3351405387487 3.3186769299338 0.5831019525625 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -514.8371729293 602.82355036474
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   35  (UP) Singlet                (1,1) 0      3.3356656101124 3.3186769299338 0.5881333907413 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -496.6857281701 615.61319288801
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   36  (UP) Singlet                (1,1) 0      3.3363279864588 3.3198998460963 0.7276876534327 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -462.7964554859 623.56781412533
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   37  (UP) Singlet                (1,1) 0      3.3379272523672 3.3260144269089 0.8849215513469 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -369.0092041896 609.74307364384
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   38  (UP) Singlet                (1,1) 0      3.3387397041524 3.3480269178339 0.7777218966849 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -348.7434593975 612.63946385655
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   39  (UP) Singlet                (1,1) 0      3.3395277454721 3.3443581693464 0.9395322319118 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -324.1099653433 604.42409202480
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   40  (UP) Singlet                (1,1) 0      3.3399573486053 3.3357977562089 2.9721005743414 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -346.7573798470 548.41676110430
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   41  (UP) Singlet                (1,1) 0      3.5487322632609 3.5534768331347 99.816991571874 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -53.91037863652 29.046877686251
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   42  (UP) Singlet                (1,1) 0      3.6893134437549 3.6867746948476 5.6375778631328 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -8.431500721444 7.8068563852802
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   43  (UP) Singlet                (1,1) 0      3.7162349984994 3.7161246827477 2.5934771972815 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -66.17527507830 56.129968217261
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   44  (UP) Singlet                (1,1) 0      3.7317169947781 3.7271309282103 3.3016890583119 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -277.1793473803 -62.93909043116
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   45  (UP) Singlet                (1,1) 0      3.7363837260019 3.7369142575103 1.0802127082973 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -80.13063426853 335.02329254488
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   46  (UP) Singlet                (1,1) 0      3.7396884906750 3.7442517544853 1.3750229883987 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -113.3475724168 246.99669559048
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   47  (UP) Singlet                (1,1) 0      3.8543717818064 3.8543142091107 1.9455786399492 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -9.320989742033 8.0013456392824
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   48  (UP) Singlet                (1,1) 0      4.3934283675866 4.3948431529376 3.4416541325029 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -26.58363916843 28.330878414326
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   49  (UP) Singlet                (1,1) 0      4.4748733141021 4.4694410388503 2.7267209120541 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -174.1279492898 37.777437304374
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   50  (UP) Singlet                (1,1) 0      4.4781737575054 4.4780014519878 1.7202662666475 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -158.4144482127 141.43608717011
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   51  (UP) Singlet                (1,1) 0      4.4826591186729 4.4865618651254 2.2043658206070 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        18.922979311472 165.49947135566
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   52  (UP) Singlet                (1,1) 0      4.5772826439293 4.5807264096382 3.6429952525461 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -406.1147995767 18.449399778164
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   53  (UP) Singlet                (1,1) 0      4.5838674206834 4.5905097389382 3.4854508565853 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        92.858092939917 325.28698584544
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   54  (UP) Singlet                (1,1) 0      6.8406354774365 6.8651338011961 4.5752217870451 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -23.10091632444 3.0586315369949
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   55  (UP) Singlet                (1,1) 0      6.8622645412437 6.8639108850336 2.9478721820359 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -12.01719007548 6.0717971847083
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   56  (UP) Singlet                (1,1) 0      6.8995156928163 6.9005983699087 3.1593318486998 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -218.3157219079 95.923572259384
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   57  (UP) Singlet                (1,1) 0      6.9081442372465 6.9116046153712 2.9242212276600 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        82.639876869461 14.538000558893
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   58  (UP) Singlet                (1,1) 0      6.9219883217507 6.9226108608338 3.2592634610067 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -149.8797261513 276.40316643884
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   59  (UP) Singlet                (1,1) 0      7.1550897072387 7.1537420155471 2.1099771615383 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -8.799301217105 8.3761023379531
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   60  (UP) Singlet                (1,1) 0      7.1574726812853 7.1549649317096 162.00029764693 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -111.2783345874 20.380941070136
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   61  (UP) Singlet                (1,1) 0      7.1767569171686 7.1769774226347 2.0126028665343 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -4.096128723046 8.9320702730863
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   62  (UP) Singlet                (1,1) 0      7.2325361962930 7.2320086499473 2.3412903621987 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -2.378017907477 5.6507459585101
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   63  (UP) Singlet                (1,1) 0      7.2726301837764 7.2735877994725 3.3596464465484 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -251.1784877474 114.21005289727
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   64  (UP) Singlet                (1,1) 0      7.2815986520950 7.2845940449350 3.2344681413507 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        94.318849764814 -2.247501427255
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   65  (UP) Singlet                (1,1) 0      7.2952202992509 7.2956002903976 3.4223513341149 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -124.2036039834 255.41497531158
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   66  (UP) Singlet                (1,1) 0      7.5386031622249 7.5389606067359 4.1747783091223 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -259.4027290762 113.58349164023
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   67  (UP) Singlet                (1,1) 0      7.5510613042703 7.5499668521984 3.6393973947443 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        37.185301041362 -115.6283772146
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   68  (UP) Singlet                (1,1) 0      7.5617160578538 7.5621960138235 4.1681337720664 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -74.77544545432 342.24566178139
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   69  (UP) Singlet                (1,1) 0      7.6910529512137 7.6930480432114 3.9282552528480 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -329.3843728146 118.09253585870
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   70  (UP) Singlet                (1,1) 0      7.7008153770506 7.7028313725115 3.5627617190297 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        122.23807193643 -32.35994438489
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   71  (UP) Singlet                (1,1) 0      7.7138005187624 7.7138376179740 3.7795646110484 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -93.00728938112 260.76958323340
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   72  (UP) Singlet                (1,1) 0      7.8669605204636 7.8752625514246 255.14316056851 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -34.01848929352 130.74122353903
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   73  (UP) Singlet                (1,1) 0      7.9365593681334 7.9400771080373 3.5398335844110 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -376.4793242781 53.748527259821
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   74  (UP) Singlet                (1,1) 0      7.9424753363382 7.9486375211748 3.4335610215697 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        37.101604141150 330.16469708109
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   75  (UP) Singlet                (1,1) 0      8.5186833718307 8.5185164529018 2.0929170468724 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -12.67477102534 13.498583097029
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   76  (UP) Singlet                (1,1) 0      9.8600266099844 9.8600554831689 1.9479123022580 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!                                    Fid        Cos Amplitude   Sine Amplitude
+                                       1        -2.748459609140 3.3504023525190

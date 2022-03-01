@@ -1,0 +1,213 @@
+! File: "C:\Users\kleinjac\OneDrive - National Institutes of Health\ASPIRE\qNMR\BayesAnalyzeResults\ToRun\JCK003-006A_DgcsteSL_cc_01.fid"
+
+  31 Configuration Parameters
+
+    File Version   =       3.000
+    Fid File       = fid/fid
+    Procpar File   = fid/procpar
+    Analysis Dir   = BayesAnalyzeFiles
+    Model Dir      = Bayes.model.fid
+    Model Dir Org  = DATA 
+    Units          = PPM  
+    Activate Shims = YES
+    Activate Delay = YES
+    Data Type      = VNMR
+    Noise          = NO 
+    Output         = BRIEF
+    Default Model  = (UP)
+    First Fid      =           1
+    Last Fid       =          10
+    No Fids        =          10
+    Total Points   =       32768
+    Complex Points =       16384
+    Noise Start    =           0
+    Model Points   =       32768
+    Model Fid      =           1
+    Prior Odds     =           0.000
+    Sampling Time  =       2.5559040
+    Spec Freq      =         399.915
+    User Reference =          -6.000
+    True Reference =          -6.000
+    Total Models   =          57
+    Shim Order     =           3
+    Max Freqs      =          75
+    Max Candidates =           1
+    Default Lb     =     1.50000
+
+   4 Global Model Parameters
+
+    Shim Delta     = 0.9452147528891 0.7500000000000
+         R Minus 1 = 0.2755156194466
+         R Center  = 0.7243876648399
+         R Plus  1 =  9.67157135E-05
+
+!   #  Name                       
+    1  Real Constant              
+
+!   #  Name                       
+    2  Imaginary Constant         
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    3  (UP) Singlet                (1,1) 0      0.9061967882109 0.9048292353471 2.6991631830335 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    4  (UP) Singlet                (1,1) 0      0.9235984493930 0.9224392725521 2.7927897552460 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    5  (UP) Singlet                (1,1) 0      0.9413609454205 0.9410276451574 2.6156009539714 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    6  (UP) Singlet                (1,1) 0      1.2227962872834 1.2208315696372 6.1843196311122 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    7  (UP) Singlet                (1,1) 0      1.2892463888656 1.2198532342370 29.413164655747 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    8  (UP) Singlet                (1,1) 0      1.5556350563553 1.5564006119329 9.7408472771097 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+    9  (UP) Singlet                (1,1) 0      2.0853471642166 2.0856800634838 2.2293327311811 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   10  (UP) Singlet                (1,1) 0      2.0921340409337 2.0935067466861 2.1046107727859 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   11  (UP) Singlet                (1,1) 0      2.4850898037983 2.4897325837991 6.1459215702729 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   12  (UP) Singlet                (1,1) 0      2.4970241151044 2.5024509440027 5.9122812658462 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   13  (UP) Singlet                (1,1) 0      2.7123812090301 2.7079013780613 1.6469898687705 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   14  (UP) Singlet                (1,1) 0      2.7181183812030 2.7186630674643 2.0802570749183 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   15  (UP) Singlet                (1,1) 0      2.7245346262116 2.7274680860668 2.4114412822556 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   16  (UP) Singlet                (1,1) 0      2.8720472167012 2.8673700483067 1.5483243214401 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   17  (UP) Singlet                (1,1) 0      2.8770093263798 2.8771534023095 1.7992949646348 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   18  (UP) Singlet                (1,1) 0      2.8831156676559 2.8859584209120 2.2101561103150 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   19  (UP) Singlet                (1,1) 0      3.2629046687373 3.2743575748228 3290.5294879299 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   20  (UP) Singlet                (1,1) 0      3.2759716639621 3.2753359102231 2.3042983014455 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   21  (UP) Singlet                (1,1) 0      3.3302649498052 3.3252310156373 1.9664599919066 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   22  (UP) Singlet                (1,1) 0      3.3337809392604 3.3252310156373 1.1585587534976 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   23  (UP) Singlet                (1,1) 0      3.3349073615237 3.3350143696401 0.9478581991742 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   24  (UP) Singlet                (1,1) 0      3.3358937058581 3.3438193882426 1.1373967333060 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   25  (UP) Singlet                (1,1) 0      3.3374715915788 3.3467543944434 1.4232112003112 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   26  (UP) Singlet                (1,1) 0      3.3393897191497 3.3467543944434 1.5611843792477 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   27  (UP) Singlet                (1,1) 0      3.3413148367167 3.3467543944434 1.0244893102222 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   28  (UP) Singlet                (1,1) 0      3.3543574078382 3.3174043324351 60.232476928536 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   29  (UP) Singlet                (1,1) 0      3.6896791097026 3.6872151137405 8.2589471186088 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   30  (UP) Singlet                (1,1) 0      3.7164445875298 3.7155868403486 2.6107352733832 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   31  (UP) Singlet                (1,1) 0      3.7312263057447 3.7273268651520 2.2651191169935 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   32  (UP) Singlet                (1,1) 0      3.7357078176121 3.7361318837545 1.5362696558326 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   33  (UP) Singlet                (1,1) 0      3.7417542671180 3.7449369023570 2.2516019453372 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   34  (UP) Singlet                (1,1) 0      3.8543755439392 3.8545104671882 2.0069270375100 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   35  (UP) Singlet                (1,1) 0      4.3933342874653 4.3935732727419 3.3940755302401 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   36  (UP) Singlet                (1,1) 0      4.4778432188029 4.4777101171659 2.8669959766835 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   37  (UP) Singlet                (1,1) 0      4.4847122592718 4.4874934711687 3.4901818626446 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   38  (UP) Singlet                (1,1) 0      4.5781985101808 4.5804353341952 3.8539217915426 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   39  (UP) Singlet                (1,1) 0      4.5849847961261 4.5911970235983 3.9005682269712 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   40  (UP) Singlet                (1,1) 0      6.8398018339514 6.8394117734394 3.3283453715562 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   41  (UP) Singlet                (1,1) 0      6.9000368098180 6.8990902328564 2.2454690865071 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   42  (UP) Singlet                (1,1) 0      6.9063518002666 6.9088735868592 2.2439974105894 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   43  (UP) Singlet                (1,1) 0      6.9220998862493 6.9215919470628 3.2724942883010 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   44  (UP) Singlet                (1,1) 0      6.9277923476031 6.8394117734394 144.54242354344 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   45  (UP) Singlet                (1,1) 0      7.1544330101654 7.1534574369289 2.0308000080290 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   46  (UP) Singlet                (1,1) 0      7.1761506535729 7.1759591511353 1.6195218231700 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   47  (UP) Singlet                (1,1) 0      7.2730971003593 7.2718360203627 3.2419513645513 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   48  (UP) Singlet                (1,1) 0      7.2821915583834 7.2825977097657 2.9474204283196 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   49  (UP) Singlet                (1,1) 0      7.2954290717112 7.2953160699694 3.3339138835517 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   50  (UP) Singlet                (1,1) 0      7.5392127731083 7.5614232988452 4.2036204211257 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   51  (UP) Singlet                (1,1) 0      7.5514554555285 7.5496832740419 3.8628233805123 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   52  (UP) Singlet                (1,1) 0      7.5620405910400 7.5604449634450 4.2219640159748 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   53  (UP) Singlet                (1,1) 0      7.6920330706815 7.6915419070823 3.9268562815302 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   54  (UP) Singlet                (1,1) 0      7.7040460727284 7.7130652858885 3.7898766270734 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   55  (UP) Singlet                (1,1) 0      7.7143777306608 7.7238269752915 3.8150808500094 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   56  (UP) Singlet                (1,1) 0      7.9370599405203 7.9282990739498 3.3442601310570 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000
+
+!   #  Name                        Order          Frequency       Init Value     Decay Rate      Init Value        Primary J       Init Value    Secondary J      Init Value  
+   57  (UP) Singlet                (1,1) 0      7.9425248050324 7.9390607633529 3.6464237508181 1.5000000000000 0.0000000000000 0.0000000000000 0.0000000000000 0.0000000000000

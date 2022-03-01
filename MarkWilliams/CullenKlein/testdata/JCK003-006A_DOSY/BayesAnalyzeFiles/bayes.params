@@ -1,0 +1,49 @@
+! File: "C:\Users\kleinjac\OneDriv"
+! Bayesian Analysis Input Parameter File
+! Created 01-Mar-2022 10:33:34  by bayes
+
+ 31 Configuration Parameters
+
+    File Version   =       3.000
+    Fid File       = fid/fid
+    Procpar File   = fid/procpar
+    Analysis Dir   = BayesAnalyzeFiles
+    Model Dir      = Bayes.model.fid
+    Model Dir Org  = DATA
+    Units          = PPM
+    Activate Shims = YES
+    Activate Delay = YES
+    Data Type      = VNMR
+    Noise          = NO
+    Output         = BRIEF
+    Default Model  = (UP)
+    First Fid      =           1
+    Last Fid       =          10
+    No Fids        =          10
+    Total Points   =       32768
+    Complex Points =       16384
+    Noise Start    =           0
+    Model Points   =       32768
+    Model Fid      =           1
+    Prior Odds     =           0
+    Sampling Time  =           2.555904
+    Spec Freq      =         399.9152
+    User Reference =          -6.0000525
+    True Reference =          -6.0000525
+    Total Models   =           2
+    Shim Order     =           3
+    Max Freqs      =          75
+    Max Candidates =           1
+    Default Lb     =           1.5
+
+   2 Global Model Parameters
+
+    Center Phase   = 0.000000000000 
+    Time Delay     = 0.000000000000 
+
+!   #  Name
+    1  Real Constant
+
+!   #  Name
+    2  Imaginary Constant
+
