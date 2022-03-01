@@ -3,7 +3,8 @@
 CampDBConnection db = new CampDBConnection();
 db.Open();
 PubChemFetcher fetcher = new PubChemFetcher();
-foreach (string name in db.getLigandList()){
+string[] ligands = new string[] {"nimodipine"};
+foreach (string name in ligands){
     Console.WriteLine(fetcher.fetchDetails(name));
 }
 db.Close();
