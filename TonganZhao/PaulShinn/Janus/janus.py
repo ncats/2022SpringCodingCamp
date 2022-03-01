@@ -5,6 +5,13 @@ import pandas as pd
 import csv
 import re
 
+#future parameters
+	#instrument--Janus or FX
+	#dilution points--7, 11, 12, 22, 24
+	#transfer volume--10
+	#start at well--A03
+	#transfer type--dilution or 1-to-1
+
 def getFileName():
 	input_file = (input("Enter filename: "))
 	return input_file
@@ -19,20 +26,16 @@ def readCSVFile(FileName):
 		csv_reader = csv.reader(csv_file, delimiter=',')
 		line_count=0
 		for row in csv_reader:
-			if line_count==0:
+			if line_count==0:	#first row in the file contains the column header names
 				print(f'Column names are {", ".join(row)}')
 				line_count+=1
-			else:
+			else:				#the columns are reoganized
 				print(f'{row[1]}, {row[2]}, {row[4]}, {row[5]}, {row[3]}')
 				line_count+=1
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
-<<<<<<< HEAD
-def readCSVFile2(FileName):
-=======
 def readCSVFile2(FileName, outfile):
->>>>>>> tongan
 	df=pd.read_csv(FileName)
 
 	print (len(df))
@@ -48,11 +51,17 @@ def readCSVFile2(FileName, outfile):
 		#print(row_to_write)
 		f.write(row_to_write)
 
-<<<<<<< HEAD
-=======
 
 	f.close()
->>>>>>> tongan
+
+#TO-DOs
+#--need to count the total rows and do a MOD operation so the correct number of plates and wells are used
+#--convert a letter row to a number for calculating the well number needed by the Janus
+#--loop through the list in sets of 16 and then change to single tip dispense
+#--create the platemap file with 384-well locations displayed
+
+#def convertRowtoNum():
+
 
 def Main():
 	print("Started")
