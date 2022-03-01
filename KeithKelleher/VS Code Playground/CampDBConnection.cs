@@ -50,10 +50,10 @@ namespace ETL_Playground
 
 	class DBConnectionSettings
 	{
-		public string server;
-		public string database;
-		public string uid;
-		public string password;
+		public string server="";
+		public string database="";
+		public string uid="";
+		public string password="";
 
 		public string getConnectionString()
 		{
