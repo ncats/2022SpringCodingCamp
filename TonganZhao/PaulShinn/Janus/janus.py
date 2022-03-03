@@ -1,5 +1,5 @@
-# Python program to illustrate
-# function with main
+# This program will convert a plate map exported from the compound store database to
+# a worklist for the Janus or FX liquid handler.
 
 import pandas as pd
 import csv
@@ -46,6 +46,25 @@ row96_to_num_for_janus = {
 	"H": 0
 }
 
+row_num384_to_row_for_janus = {
+	15: "A",
+	14: "B",
+	13: "C",
+	12: "D",
+	11: "E",
+	10: "F",
+	9: "G",
+	8: "H",
+	7: "I",
+	6: "J",
+	5: "K",
+	4: "L",
+	3: "M",
+	2: "N",
+	1: "O",
+	0: "P"
+}
+
 def robotize(well, instrument):
 	(row_name, column_num) = (well[0], well[1:3])
 
@@ -59,14 +78,21 @@ def robotize(well, instrument):
 		return int(column_num)*8 - row96_to_num_for_janus[row_name]
 
 
-#Convert machine form to human form
-def humanize(well):
-	i=0
-	i+=1
-	offset = (well-1)/(COL)*i
-	rowIndex = chr(65 + offset)
-
-	colIndex = well - (offset * (COL)*i)
+#Convert 384-well machine form to human readable form
+def humanize(well, instrument):
+	if instrument=='FX':
+		#convert an FX 384-well to RowColumn format
+		row_num=int(math.ceil(well/16))
+		row = chr(row_num + 64)
+		column = well % 24
+		new_well = row + str(column)
+		return new_well
+	elif instrument=='Janus':
+		#convert a Janus 384-well to RowColumn format
+		column=int(math.ceil(well/16))
+		row_num=column*16-well
+		new_well=row_num384_to_row_for_janus[row_num] + str(column)
+		return new_well
 
 
 def getParams():
@@ -92,7 +118,7 @@ def readCSVFile(FileName):
 			if line_count==0:	#first row in the file contains the column header names
 				print(f'Column names are {", ".join(row)}')
 				line_count+=1
-			else:				#the columns are reoganized
+			else:				#the columns are reorganized
 				print(f'{row[1]}, {row[2]}, {row[4]}, {row[5]}, {row[3]}')
 				line_count+=1
 		print(f'Processed {line_count} lines')
@@ -118,9 +144,14 @@ def readCSVFile2(FileName, instrument, outfile):
 
 	f.close()
 
+#do a mod 16 on the number of rows in the plate map.
+#if it's 7pt, then cols 3, 10, and 17
+#if it's 11pt, then cols 3 and 14
+#if it's 22pt, then col 3
+
+
 #TO-DOs
 #--need to count the total rows and do a MOD operation so the correct number of plates and wells are used
-#--convert a letter row to a number for calculating the well number needed by the Janus
 #--loop through the list in sets of 16 and then change to single tip dispense
 #--create the platemap file with 384-well locations displayed
 
@@ -133,10 +164,6 @@ def Main():
 	# calling the getFileName function and
 	# storing its returned value in the output variable
 	FileName, instrument, dil_points, volume = getParams()
-
-	#this open FileName was part of the first homework
-	#f = open(FileName, "rt")	
-	#print(f.read())
 
 	#extracts the root file name and appends a 2 onto it
 	outfile=re.findall("(\S+).csv", FileName)[0] + "2.csv"
