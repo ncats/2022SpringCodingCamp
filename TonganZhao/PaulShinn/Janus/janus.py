@@ -35,23 +35,16 @@ import re
 #Matrix Conversion robotize and humanize written by Cyrus Khajvandi
 #Convert 96 well plate from robot integer recognition to human form & vice-versa
 
-def row_to_num_for_janus(row_name):
-	if row_name=='A':
-		return 7
-	if row_name=='B':
-		return 6
-	if row_name=='C':
-		return 5
-	if row_name=='D':
-		return 4
-	if row_name=='E':
-		return 3
-	if row_name=='F':
-		return 2
-	if row_name=='G':
-		return 1
-	if row_name=='H':
-		return 0
+row96_to_num_for_janus = {
+	"A": 7,
+	"B": 6,
+	"C": 5,
+	"D": 4,
+	"E": 3,
+	"F": 2,
+	"G": 1,
+	"H": 0
+}
 
 def robotize(well, instrument):
 	(row_name, column_num) = (well[0], well[1:3])
@@ -63,7 +56,7 @@ def robotize(well, instrument):
 		return ascii_value*12 + int(column_num)
 	elif instrument=='Janus':
 		#Janus number
-		return int(column_num)*8 - row_to_num_for_janus(row_name)
+		return int(column_num)*8 - row96_to_num_for_janus[row_name]
 
 
 #Convert machine form to human form
@@ -76,9 +69,15 @@ def humanize(well):
 	colIndex = well - (offset * (COL)*i)
 
 
-def getFileName():
-	input_file = (input("Enter filename: "))
-	return input_file
+def getParams():
+	input_file = (input("Enter filename: ") or "map.csv")
+	instrument = (input("[Janus] or FX?: ") or "Janus")
+	dil_points = (input("How many dilution points? 7, [11], 22 ") or 11)
+	volume = (input("What volume? [10] ") or 10)
+
+	return input_file, instrument, dil_points, volume
+
+
 
 #def PrintStep():
 #    for step in range(5):    
@@ -99,7 +98,7 @@ def readCSVFile(FileName):
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
-def readCSVFile2(FileName, outfile):
+def readCSVFile2(FileName, instrument, outfile):
 	df=pd.read_csv(FileName)
 
 	print (len(df))
@@ -111,7 +110,7 @@ def readCSVFile2(FileName, outfile):
 	for i, row in df.iterrows():
 		Conc=re.findall("\d+", row['Concentration'])[0]
 
-		robot_well=str(robotize(str(row['Well']),"Janus"))
+		robot_well=str(robotize(str(row['Well']), instrument))
 		row_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + str(row['Sample ID']) + "," + str(Conc) + "," + str(row['Barcode']) + "," + robot_well + "\n"
 
 		#print(row_to_write)
@@ -133,7 +132,7 @@ def Main():
 
 	# calling the getFileName function and
 	# storing its returned value in the output variable
-	FileName = getFileName()
+	FileName, instrument, dil_points, volume = getParams()
 
 	#this open FileName was part of the first homework
 	#f = open(FileName, "rt")	
@@ -148,7 +147,7 @@ def Main():
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName, outfile)
+	readCSVFile2(FileName, instrument, outfile)
 
 # now we are required to tell Python
 # for 'Main' function existence
