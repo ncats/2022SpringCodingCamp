@@ -7,7 +7,7 @@ import re
 
 #future parameters
 	#instrument--Janus or FX
-	#dilution points--7, 11, 12, 22, 24
+	#dilution points--7, 11, 22
 	#transfer volume--10
 	#start at well--A03
 	#transfer type--dilution or 1-to-1
@@ -32,7 +32,6 @@ import re
 #G01    G02 G03 G04 G05 G06 G07 G08 G09 G10 G11 G12     73  74  75  76  77  78  79  80  81  82  83  84
 #H01    H02 H03 H04 H05 H06 H07 H08 H09 H10 H11 H12     85  86  87  88  89  90  91  92  93  94  95  96
 
-#Matrix Conversion robotize and humanize written by Cyrus Khajvandi
 #Convert 96 well plate from robot integer recognition to human form & vice-versa
 
 row96_to_num_for_janus = {
@@ -63,6 +62,13 @@ row_num384_to_row_for_janus = {
 	2: "N",
 	1: "O",
 	0: "P"
+}
+
+#the number of columns that will be filled in a 384-well plate depending on the number of dilution points
+plate_counter = {
+	7: 3,
+	11: 2,
+	22: 1
 }
 
 def robotize(well, instrument):
@@ -105,10 +111,6 @@ def getParams():
 
 
 
-#def PrintStep():
-#    for step in range(5):    
-#        print(step)
-
 def readCSVFile(FileName):
 	
 	with open(FileName) as csv_file:
@@ -124,11 +126,15 @@ def readCSVFile(FileName):
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
-def readCSVFile2(FileName, instrument, outfile):
+def readCSVFile2(FileName, instrument, dil_points, worklist, platemap):
 	df=pd.read_csv(FileName)
 
 	print (len(df))
-	f=open(outfile, "w")
+	print(plate_counter[dil_points])
+	w=open(worklist, "w")	#opens the worklist file for writing
+	p=open(platemap, "w")	#opens the platemap file for writing
+
+	dest_plate_count=0
 
 	#reorganizes the columns in the CSV and
 	#extracts just the number from the concentration column
@@ -136,13 +142,19 @@ def readCSVFile2(FileName, instrument, outfile):
 	for i, row in df.iterrows():
 		Conc=re.findall("\d+", row['Concentration'])[0]
 
-		robot_well=str(robotize(str(row['Well']), instrument))
-		row_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + str(row['Sample ID']) + "," + str(Conc) + "," + str(row['Barcode']) + "," + robot_well + "\n"
+		source_well=str(robotize(str(row['Well']), instrument))
+
+		if (i % (16*plate_counter[dil_points]))==0:
+			dest_plate_count += 1
+
+		worklist_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "\n"
+		platemap_to_write= str(i) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + "\n"
 
 		#print(row_to_write)
-		f.write(row_to_write)
+		w.write(worklist_to_write)
+		p.write(platemap_to_write)
 
-	f.close()
+	w.close()
 
 #do a mod 16 on the number of rows in the plate map.
 #if it's 7pt, then cols 3, 10, and 17
@@ -165,16 +177,18 @@ def Main():
 	# storing its returned value in the output variable
 	FileName, instrument, dil_points, volume = getParams()
 
-	#extracts the root file name and appends a 2 onto it
-	outfile=re.findall("(\S+).csv", FileName)[0] + "2.csv"
-	
-	print(outfile)
+	#extracts the root file name and appends "worklist" or "platemap" onto it
+	worklist=re.findall("(\S+).csv", FileName)[0] + "-worklist.csv"
+	platemap=re.findall("(\S+).csv", FileName)[0] + "-platemap.csv"
+
+	print(worklist)
+	print(platemap)
 
 	#read a CSV through regular file reader
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName, instrument, outfile)
+	readCSVFile2(FileName, instrument, dil_points, worklist, platemap)
 
 # now we are required to tell Python
 # for 'Main' function existence
