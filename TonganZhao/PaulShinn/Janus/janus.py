@@ -125,8 +125,8 @@ def humanize(well, instrument):
 def getParams():
 	input_file = (input("Enter filename: ") or "map.csv")
 	instrument = (input("[Janus] or FX?: ") or "Janus")
-	dil_points = (input("How many dilution points? 7, [11], 22 ") or 11)
-	volume = (input("What volume? [10] ") or 10)
+	dil_points = int((input("How many dilution points? 7, [11], 22 ") or 11))
+	volume = int((input("What volume? [10] ") or 10))
 
 	return input_file, instrument, dil_points, volume
 
@@ -147,13 +147,20 @@ def readCSVFile(FileName):
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
-def readCSVFile2(FileName, instrument, dil_points, worklist, platemap):
+def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 	df=pd.read_csv(FileName)
 
-	print (len(df))
+	print("File Length: " + str(len(df)))
+	print("Dil Points: " + str(dil_points))
+
 	print(column_counter[dil_points])
 	w=open(worklist, "w")	#opens the worklist file for writing
 	p=open(platemap, "w")	#opens the platemap file for writing
+
+	#write the headers
+	worklist_to_write= str("Source,Well,Dest,Well,Volume\n")
+
+	w.write(worklist_to_write)
 
 	dest_plate_count=0
 	column_number=3
@@ -165,25 +172,26 @@ def readCSVFile2(FileName, instrument, dil_points, worklist, platemap):
 		Conc=re.findall("\d+", row['Concentration'])[0]
 		#for the future, add an IF statement when no concentration is listed
 
-		source_well=str(robotize(str(row['Well']), instrument))
-
 		if (i % (16*column_counter[dil_points]))==0:
 			dest_plate_count += 1
 
 		#if the row count is less than the MOD of total columns, then skip rows
 		if (int(math.ceil(i/16)) <= int(math.floor(len(df)/16))):
 			well=(column_number-1)*16 + skip_row_janus[i % 16]
-			#add an else
+		else:
+			well += 1
 
 		if (i != 0):	#ignore the first one
 			if ((i+1) % 16) == 0:	#at the bottom of a column
-				if ((column_number+dil_points-1) < 24):
+				if ((column_number+dil_points-1) < 22):
 					column_number=column_number+dil_points
 				else:
 					column_number=3
 
-		worklist_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "\n"
-		platemap_to_write= str(i) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize(well, "Janus")) + "\n"
+		source_well=str(robotize(str(row['Well']), instrument))
+
+		worklist_to_write= str(i+1) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(volume) + "\n"
+		platemap_to_write= str(i+1) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize(well, "Janus")) + "\n"
 
 		#print(row_to_write)
 		w.write(worklist_to_write)
@@ -223,7 +231,7 @@ def Main():
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName, instrument, dil_points, worklist, platemap)
+	readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap)
 
 # now we are required to tell Python
 # for 'Main' function existence
