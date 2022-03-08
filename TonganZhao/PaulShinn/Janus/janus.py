@@ -34,6 +34,16 @@ import math
 #G01    G02 G03 G04 G05 G06 G07 G08 G09 G10 G11 G12     73  74  75  76  77  78  79  80  81  82  83  84
 #H01    H02 H03 H04 H05 H06 H07 H08 H09 H10 H11 H12     85  86  87  88  89  90  91  92  93  94  95  96
 
+
+def getParams():
+	input_file = (input("Enter filename: ") or "map.csv")
+	instrument = (input("[Janus] or FX?: ") or "Janus")
+	dil_points = int((input("How many dilution points? 7, [11], 22 ") or 11))
+	volume = int((input("What volume? [10] ") or 10))
+
+	return input_file, instrument, dil_points, volume
+
+
 #Convert 96 well plate from robot integer recognition to human form & vice-versa
 
 row96_to_num_for_janus = {
@@ -92,44 +102,45 @@ skip_row_janus = {
 	15:16
 }
 
-def robotize(well, instrument):
-	(row_name, column_num) = (well[0], well[1:3])
+#converts a 96-well row/column to robot well location
+def robotize96(well, instrument):
+	(row_name, col_num) = (well[0], well[1:3])
 
 	#print(column_num)
 	if instrument=='FX':
 		#FX number
 		ascii_value = ord(row_name) - 65
-		return ascii_value*12 + int(column_num)
+		return ascii_value*12 + int(col_num)
 	elif instrument=='Janus':
 		#Janus number
-		return int(column_num)*8 - row96_to_num_for_janus[row_name]
+		return int(col_num)*8 - row96_to_num_for_janus[row_name]
 
 
 #Convert 384-well machine form to human readable form
-def humanize(well, instrument):
+def humanize384(well, instrument):
 	if instrument=='FX':
 		#convert an FX 384-well to RowColumn format
 		row_num=int(math.ceil(well/16))
 		row = chr(row_num + 64)
-		column = well % 24
-		new_well = row + str(column)
+		col_num = well % 24
+		new_well = row + f"{col_num:02}"
 		return new_well
 	elif instrument=='Janus':
 		#convert a Janus 384-well to RowColumn format
-		column=int(math.ceil(well/16))
-		row_num=column*16-well
-		new_well=row_num384_to_row_for_janus[row_num] + str(column)
+		col_num=int(math.ceil(well/16))
+		row_num=col_num*16-well
+		new_well=row_num384_to_row_for_janus[row_num] + f"{col_num:02}"
 		return new_well
 
+#converts a Janus well number to an FX well number
+def convertJanus384toFX(well):
+	col_num=int(math.ceil(well/16))
+	if (well % 16 == 0): #is it the bottom row?
+		row_num=16
+	else:
+		row_num=well % 16
 
-def getParams():
-	input_file = (input("Enter filename: ") or "map.csv")
-	instrument = (input("[Janus] or FX?: ") or "Janus")
-	dil_points = int((input("How many dilution points? 7, [11], 22 ") or 11))
-	volume = int((input("What volume? [10] ") or 10))
-
-	return input_file, instrument, dil_points, volume
-
+	return ((row_num-1)*24 + col_num)	#this is the FX well number
 
 
 def readCSVFile(FileName):
@@ -188,11 +199,15 @@ def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 				else:
 					column_number=3
 
-		source_well=str(robotize(str(row['Well']), instrument))
+		source_well=str(robotize96(str(row['Well']), instrument))
 
-		worklist_to_write= str(i+1) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(volume) + "\n"
-		platemap_to_write= str(i+1) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize(well, "Janus")) + "\n"
-
+		if (instrument=="Janus"):
+			worklist_to_write= str(row['Plate']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(volume) + "\n"
+			platemap_to_write= f"{row['Barcode']:010}" + "," + str(row['Sample ID']) + "," + str(Conc) + "mM,384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize384(well, "Janus")) + "\n"
+		else:
+			worklist_to_write= str(row['Plate']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(convertJanus384toFX(well)) + "," + str(volume) + "\n"
+			platemap_to_write= f"{row['Barcode']:010}" + "," + str(row['Sample ID']) + "," + str(Conc) + "mM,384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize384(convertJanus384toFX(well), "FX")) + "\n"			
+		
 		#print(row_to_write)
 		w.write(worklist_to_write)
 		p.write(platemap_to_write)
