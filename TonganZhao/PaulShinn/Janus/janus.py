@@ -1,9 +1,11 @@
 # This program will convert a plate map exported from the compound store database to
 # a worklist for the Janus or FX liquid handler.
 
+from turtle import colormode
 import pandas as pd
 import csv
 import re
+import math
 
 #future parameters
 	#instrument--Janus or FX
@@ -65,10 +67,29 @@ row_num384_to_row_for_janus = {
 }
 
 #the number of columns that will be filled in a 384-well plate depending on the number of dilution points
-plate_counter = {
-	7: 3,
-	11: 2,
-	22: 1
+column_counter = {
+	7:3,
+	11:2,
+	22:1
+}
+
+skip_row_janus = {
+	0:1,
+	1:3,
+	2:5,
+	3:7,
+	4:9,
+	5:11,
+	6:13,
+	7:15,
+	8:2,
+	9:4,
+	10:6,
+	11:8,
+	12:10,
+	13:12,
+	14:14,
+	15:16
 }
 
 def robotize(well, instrument):
@@ -130,25 +151,39 @@ def readCSVFile2(FileName, instrument, dil_points, worklist, platemap):
 	df=pd.read_csv(FileName)
 
 	print (len(df))
-	print(plate_counter[dil_points])
+	print(column_counter[dil_points])
 	w=open(worklist, "w")	#opens the worklist file for writing
 	p=open(platemap, "w")	#opens the platemap file for writing
 
 	dest_plate_count=0
+	column_number=3
 
 	#reorganizes the columns in the CSV and
 	#extracts just the number from the concentration column
 	#before writing them to a file
 	for i, row in df.iterrows():
 		Conc=re.findall("\d+", row['Concentration'])[0]
+		#for the future, add an IF statement when no concentration is listed
 
 		source_well=str(robotize(str(row['Well']), instrument))
 
-		if (i % (16*plate_counter[dil_points]))==0:
+		if (i % (16*column_counter[dil_points]))==0:
 			dest_plate_count += 1
 
-		worklist_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "\n"
-		platemap_to_write= str(i) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + "\n"
+		#if the row count is less than the MOD of total columns, then skip rows
+		if (int(math.ceil(i/16)) <= int(math.floor(len(df)/16))):
+			well=(column_number-1)*16 + skip_row_janus[i % 16]
+			#add an else
+
+		if (i != 0):	#ignore the first one
+			if ((i+1) % 16) == 0:	#at the bottom of a column
+				if ((column_number+dil_points-1) < 24):
+					column_number=column_number+dil_points
+				else:
+					column_number=3
+
+		worklist_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "\n"
+		platemap_to_write= str(i) + "," + str(row['Barcode']) + "," + str(row['Sample ID']) + "," + str(Conc) + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize(well, "Janus")) + "\n"
 
 		#print(row_to_write)
 		w.write(worklist_to_write)
