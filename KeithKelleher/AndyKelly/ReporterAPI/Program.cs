@@ -15,7 +15,7 @@ namespace POSTAPI
                 var newCriteria = new Criteria()
                 {
                     agencies = new List<dynamic> {"NCATS"},
-                    fiscal_years = new List<dynamic> {2019,2020}
+                    fiscal_years = new List<dynamic> {2020}
                 };       
                 var newPost = new Post()
                 {
@@ -33,8 +33,10 @@ namespace POSTAPI
                 //Console.WriteLine(newPostJson);
                 var payLoad = new StringContent(newPostJson, Encoding.UTF8, "application/json");
                 var result = client.PostAsync(endpoint, payLoad).Result.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(result);
-                
+                //Console.WriteLine(result);
+                dynamic parsedResult = JsonConvert.DeserializeObject(result);
+                Console.WriteLine(parsedResult.meta.properties.URL);
+                Console.WriteLine(parsedResult.results[0].fiscal_year);
             }
         }
     }
