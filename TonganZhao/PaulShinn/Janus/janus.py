@@ -169,7 +169,7 @@ def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 	p=open(platemap, "w")	#opens the platemap file for writing
 
 	#write the headers
-	worklist_to_write= str("Source,Well,Dest,DestWell,Volume\n")
+	worklist_to_write= str("Source,Well,Dest,DestWell, Volume\n")
 
 	w.write(worklist_to_write)
 
