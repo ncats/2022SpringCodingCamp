@@ -6,9 +6,16 @@ app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "static/"
 
 @app.route('/')
-def upload_file():
-    return render_template('index.html')
+def home():
+    return render_template("home.html")
 
+@app.route('/upload')
+def upload_file():
+    return render_template('upload.html')
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
 
 @app.route('/display', methods = ['GET', 'POST'])
 def display_file():
