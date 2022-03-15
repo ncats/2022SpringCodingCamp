@@ -1,13 +1,15 @@
-# Python program to illustrate
-# function with main
+# This program will convert a plate map exported from the compound store database to
+# a worklist for the Janus or FX liquid handler.
 
+from turtle import colormode
 import pandas as pd
 import csv
 import re
+import math
 
 #future parameters
 	#instrument--Janus or FX
-	#dilution points--7, 11, 12, 22, 24
+	#dilution points--7, 11, 22
 	#transfer volume--10
 	#start at well--A03
 	#transfer type--dilution or 1-to-1
@@ -32,57 +34,114 @@ import re
 #G01    G02 G03 G04 G05 G06 G07 G08 G09 G10 G11 G12     73  74  75  76  77  78  79  80  81  82  83  84
 #H01    H02 H03 H04 H05 H06 H07 H08 H09 H10 H11 H12     85  86  87  88  89  90  91  92  93  94  95  96
 
-#Matrix Conversion robotize and humanize written by Cyrus Khajvandi
+
+def getParams():
+	input_file = (input("Enter filename: ") or "map.csv")
+	instrument = (input("[Janus] or FX?: ") or "Janus")
+	dil_points = int((input("How many dilution points? 7, [11], 22 ") or 11))
+	volume = int((input("What volume? [10] ") or 10))
+
+	return input_file, instrument, dil_points, volume
+
+
 #Convert 96 well plate from robot integer recognition to human form & vice-versa
 
-def row_to_num_for_janus(row_name):
-	if row_name=='A':
-		return 7
-	if row_name=='B':
-		return 6
-	if row_name=='C':
-		return 5
-	if row_name=='D':
-		return 4
-	if row_name=='E':
-		return 3
-	if row_name=='F':
-		return 2
-	if row_name=='G':
-		return 1
-	if row_name=='H':
-		return 0
+row96_to_num_for_janus = {
+	"A": 7,
+	"B": 6,
+	"C": 5,
+	"D": 4,
+	"E": 3,
+	"F": 2,
+	"G": 1,
+	"H": 0
+}
 
-def robotize(well, instrument):
-	(row_name, column_num) = (well[0], well[1:3])
+row_num384_to_row_for_janus = {
+	15: "A",
+	14: "B",
+	13: "C",
+	12: "D",
+	11: "E",
+	10: "F",
+	9: "G",
+	8: "H",
+	7: "I",
+	6: "J",
+	5: "K",
+	4: "L",
+	3: "M",
+	2: "N",
+	1: "O",
+	0: "P"
+}
+
+#the number of columns that will be filled in a 384-well plate depending on the number of dilution points
+column_counter = {
+	7:3,
+	11:2,
+	22:1
+}
+
+skip_row_janus = {
+	0:1,
+	1:3,
+	2:5,
+	3:7,
+	4:9,
+	5:11,
+	6:13,
+	7:15,
+	8:2,
+	9:4,
+	10:6,
+	11:8,
+	12:10,
+	13:12,
+	14:14,
+	15:16
+}
+
+#converts a 96-well row/column to robot well location
+def robotize96(well, instrument):
+	(row_name, col_num) = (well[0], well[1:3])
 
 	#print(column_num)
 	if instrument=='FX':
 		#FX number
 		ascii_value = ord(row_name) - 65
-		return ascii_value*12 + int(column_num)
+		return ascii_value*12 + int(col_num)
 	elif instrument=='Janus':
 		#Janus number
-		return int(column_num)*8 - row_to_num_for_janus(row_name)
+		return int(col_num)*8 - row96_to_num_for_janus[row_name]
 
 
-#Convert machine form to human form
-def humanize(well):
-	i=0
-	i+=1
-	offset = (well-1)/(COL)*i
-	rowIndex = chr(65 + offset)
+#Convert 384-well machine form to human readable form
+def humanize384(well, instrument):
+	if instrument=='FX':
+		#convert an FX 384-well to RowColumn format
+		row_num=int(math.ceil(well/16))
+		row = chr(row_num + 64)
+		col_num = well % 24
+		new_well = row + f"{col_num:02}"
+		return new_well
+	elif instrument=='Janus':
+		#convert a Janus 384-well to RowColumn format
+		col_num=int(math.ceil(well/16))
+		row_num=col_num*16-well
+		new_well=row_num384_to_row_for_janus[row_num] + f"{col_num:02}"
+		return new_well
 
-	colIndex = well - (offset * (COL)*i)
+#converts a Janus well number to an FX well number
+def convertJanus384toFX(well):
+	col_num=int(math.ceil(well/16))
+	if (well % 16 == 0): #is it the bottom row?
+		row_num=16
+	else:
+		row_num=well % 16
 
+	return ((row_num-1)*24 + col_num)	#this is the FX well number
 
-def getFileName():
-	input_file = (input("Enter filename: "))
-	return input_file
-
-#def PrintStep():
-#    for step in range(5):    
-#        print(step)
 
 def readCSVFile(FileName):
 	
@@ -93,35 +152,76 @@ def readCSVFile(FileName):
 			if line_count==0:	#first row in the file contains the column header names
 				print(f'Column names are {", ".join(row)}')
 				line_count+=1
-			else:				#the columns are reoganized
+			else:				#the columns are reorganized
 				print(f'{row[1]}, {row[2]}, {row[4]}, {row[5]}, {row[3]}')
 				line_count+=1
 		print(f'Processed {line_count} lines')
 
 #read the CSV using Pandas
-def readCSVFile2(FileName, outfile):
+def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 	df=pd.read_csv(FileName)
 
-	print (len(df))
-	f=open(outfile, "w")
+	print("File Length: " + str(len(df)))
+	print("Dil Points: " + str(dil_points))
+
+	print(column_counter[dil_points])
+	w=open(worklist, "w")	#opens the worklist file for writing
+	p=open(platemap, "w")	#opens the platemap file for writing
+
+	#write the headers
+	worklist_to_write= str("Source,Well,Dest,DestWell, Volume\n")
+
+	w.write(worklist_to_write)
+
+	dest_plate_count=0
+	column_number=3
 
 	#reorganizes the columns in the CSV and
 	#extracts just the number from the concentration column
 	#before writing them to a file
 	for i, row in df.iterrows():
 		Conc=re.findall("\d+", row['Concentration'])[0]
+		#for the future, add an IF statement when no concentration is listed
 
-		robot_well=str(robotize(str(row['Well']),"Janus"))
-		row_to_write= str(i) + "," + str(row['Plate']) + "," + str(row['Well']) + "," + str(row['Sample ID']) + "," + str(Conc) + "," + str(row['Barcode']) + "," + robot_well + "\n"
+		if (i % (16*column_counter[dil_points]))==0:
+			dest_plate_count += 1
 
+		#if the row count is less than the MOD of total columns, then skip rows
+		if (int(math.ceil(i/16)) <= int(math.floor(len(df)/16))):
+			well=(column_number-1)*16 + skip_row_janus[i % 16]
+		else:
+			well += 1
+
+		if (i != 0):	#ignore the first one
+			if ((i+1) % 16) == 0:	#at the bottom of a column
+				if ((column_number+dil_points-1) < 22):
+					column_number=column_number+dil_points
+				else:
+					column_number=3
+
+		source_well=str(robotize96(str(row['Well']), instrument))
+
+		if (instrument=="Janus"):
+			worklist_to_write= str(row['Plate']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(well) + "," + str(volume) + "\n"
+			platemap_to_write= f"{row['Barcode']:010}" + "," + str(row['Sample ID']) + "," + str(Conc) + "mM,384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize384(well, "Janus")) + "\n"
+		else:
+			worklist_to_write= str(row['Plate']) + "," + source_well + ",384-" + str(dest_plate_count) + "," + str(convertJanus384toFX(well)) + "," + str(volume) + "\n"
+			platemap_to_write= f"{row['Barcode']:010}" + "," + str(row['Sample ID']) + "," + str(Conc) + "mM,384-" + str(dest_plate_count) + "," + str(well) + "," + str(humanize384(convertJanus384toFX(well), "FX")) + "\n"			
+		
 		#print(row_to_write)
-		f.write(row_to_write)
+		w.write(worklist_to_write)
+		p.write(platemap_to_write)
 
-	f.close()
+	w.close()
+
+#do a mod 16 on the number of rows in the plate map.
+#if it's 7pt, then cols 3, 10, and 17
+#if it's 11pt, then cols 3 and 14
+#if it's 22pt, then col 3
+
 
 #TO-DOs
 #--need to count the total rows and do a MOD operation so the correct number of plates and wells are used
-#--convert a letter row to a number for calculating the well number needed by the Janus
 #--loop through the list in sets of 16 and then change to single tip dispense
 #--create the platemap file with 384-well locations displayed
 
@@ -133,22 +233,20 @@ def Main():
 
 	# calling the getFileName function and
 	# storing its returned value in the output variable
-	FileName = getFileName()
+	FileName, instrument, dil_points, volume = getParams()
 
-	#this open FileName was part of the first homework
-	#f = open(FileName, "rt")	
-	#print(f.read())
+	#extracts the root file name and appends "worklist" or "platemap" onto it
+	worklist=re.findall("(\S+).csv", FileName)[0] + "-worklist.csv"
+	platemap=re.findall("(\S+).csv", FileName)[0] + "-platemap.csv"
 
-	#extracts the root file name and appends a 2 onto it
-	outfile=re.findall("(\S+).csv", FileName)[0] + "2.csv"
-	
-	print(outfile)
+	print(worklist)
+	print(platemap)
 
 	#read a CSV through regular file reader
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName, outfile)
+	readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap)
 
 # now we are required to tell Python
 # for 'Main' function existence
