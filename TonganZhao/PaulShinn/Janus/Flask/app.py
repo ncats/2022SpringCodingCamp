@@ -17,7 +17,7 @@ def upload_file():
 def about():
     return render_template("about.html")
 
-@app.route('/display', methods = ['GET', 'POST'])
+@app.route('/upload_file', methods = ['GET', 'POST'])
 def display_file():
     if request.method == 'POST':
         f = request.files['file']
@@ -26,18 +26,13 @@ def display_file():
         f.save(app.config['UPLOAD_FOLDER'] + filename)
 
         file = open(app.config['UPLOAD_FOLDER'] + filename,"r")
-        content = file.read()   
+        content = file.read()
+        volume=request.form.get("Volume")
+        dil_points=request.form.get("dil_points")
+        instrument=request.form.get("instrument")
+        return str(volume) + str(dil_points) + str(instrument)
         
-    return render_template('content.html', content=content) 
-
-@app.route('/display')
-def index():
-    return render_template('index.html',
-        data=[{'gender': 'Gender'}, {'gender': 'female'}, {'gender': 'male'}],
-        data1=[{'noc': 'Number of Children'}, {'noc': 0}, {'noc': 1}, {'noc': 2}, {'noc': 3}, {'noc': 4}, {'noc': 5}],
-        data2=[{'smoke': 'Smoking Status'}, {'smoke': 'yes'}, {'smoke': 'no'}],
-        data3=[{'region': "Region"}, {'region': "northeast"}, {'region': "northwest"},
-               {'region': 'southeast'}, {'region': "southwest"}])
+    return render_template('upload.html', content=content) 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000, debug = True)

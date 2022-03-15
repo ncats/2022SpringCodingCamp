@@ -1,0 +1,29 @@
+--- REMOVE TUBE SCRIPT - FIXED POSITIONS
+DECLARE
+    cCustOrderID     VARCHAR2(8);
+    aError           IFS_API.ErrorDetailsRecType;
+    
+    procedure TestError(aError IFS_API.ErrorDetailsRecType) is
+    begin 
+        IF aError.error_number <> 0 THEN
+          RAISE_APPLICATION_ERROR(aError.error_number,aError.error_message);
+        END IF;
+    end;                                                            
+        
+BEGIN
+    SELECT last_number INTO cCustOrderID FROM SYS.dba_sequences WHERE sequence_name='NEWSISORDERID_SEQ';
+    IFS_API.IssueOrder(cCustOrderID, 'REMOVE', 'TUBE', 'Paul', aError, 50, 'test', '', '');TestError(aError);
+	IFS_API.AddOrderOption(cCustOrderID,'DEFERRED',aError);TestError(aError);
+	IFS_API.AddOrderOption(cCustOrderID,'PEND_IF_UNAVAILABLE',aError);TestError(aError);
+    IFS_API.AddOrderTube(cCustOrderID, '0155890228', aError);TestError(aError);
+	IFS_API.SendOrder(cCustOrderID, aError);TestError(aError);
+End;
+
+
+
+declare
+cSISOrdState SIS.OrderStatusType;
+nSISOrdErrNum SIS.ErrorCodeType;
+begin
+  sis_order_methods.acceptorder('12559', cSISOrdState, nSISOrdErrNum, 'COMA', 10);
+end;
