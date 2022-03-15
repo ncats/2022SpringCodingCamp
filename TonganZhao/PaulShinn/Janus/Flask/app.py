@@ -30,7 +30,7 @@ def display_file():
         volume=request.form.get("Volume")
         dil_points=request.form.get("dil_points")
         instrument=request.form.get("instrument")
-        return str(volume) + str(dil_points) + str(instrument)
+        return str(volume) + str(dil_points) + str(instrument) +str(filename)
         
     return render_template('upload.html', content=content) 
 
