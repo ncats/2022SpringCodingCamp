@@ -216,8 +216,8 @@ def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 	df_platemap=pd.DataFrame(platemap_to_write)
 
 	with pd.ExcelWriter(worklist) as writer:
-		df_worklist.to_excel(writer, sheet_name='Worklist', index=False)
-		df_platemap.to_excel(writer, sheet_name='Platemap', index=False)
+		df_worklist.to_excel(writer, sheet_name='Worklist', header=False, index=False)
+		df_platemap.to_excel(writer, sheet_name='Platemap', header=False, index=False)
 
 
 def Main():

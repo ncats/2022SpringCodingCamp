@@ -213,15 +213,15 @@ def readCSVFile2(FileName, instrument, dil_points, volume, worklist, platemap):
 	
 	df_worklist=pd.DataFrame(worklist_to_write, columns=['Source','Well','Dest','DestWell','Volume'], dtype = float)
 #	df_worklist.columns=df_worklist[0]
-#	df_worklist=df_worklist[2:]
+#	df_worklist=df_worklist[1:]
 
 	df_platemap=pd.DataFrame(platemap_to_write)
 #	df_platemap.columns=df_platemap[0]
 #	df_platemap=df_platemap[2:]
 
 	with pd.ExcelWriter(worklist) as writer:
-		df_worklist.to_excel(writer, sheet_name='Worklist', index=False)
-		df_platemap.to_excel(writer, sheet_name='Platemap', index=False)
+		df_worklist.to_excel(writer, sheet_name='Worklist', header=False, index=False)
+		df_platemap.to_excel(writer, sheet_name='Platemap', header=False, index=False)
 
 
 def Main():
