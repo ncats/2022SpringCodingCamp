@@ -1,9 +1,6 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 
-import re
-import janus
-
 app = Flask(__name__)
 
 app.config["UPLOAD_FOLDER"] = "static/"
@@ -33,12 +30,6 @@ def display_file():
         volume=request.form.get("Volume")
         dil_points=request.form.get("dil_points")
         instrument=request.form.get("instrument")
-
-        #extracts the root file name and appends "worklist" or "platemap" onto it
-        worklist=re.findall("(\S+).csv", str(filename))[0] + "-worklist.xlsx"
-
-        janus.readCSVFile2(filename, instrument, dil_points, volume, worklist)
-
         return str(volume) + str(dil_points) + str(instrument) +str(filename)
         
     return render_template('upload.html', content=content) 
