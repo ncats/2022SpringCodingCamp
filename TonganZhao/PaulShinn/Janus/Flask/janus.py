@@ -165,10 +165,10 @@ def convertJanus384toFX(well):
 def readCSVFile2(FileName, instrument, dil_points, volume, worklist):
 	df=pd.read_csv(FileName)
 
-	print("File Length: " + str(len(df)))
-	print("Dil Points: " + str(dil_points))
+#	print("File Length: " + str(len(df)))
+#	print("Dil Points: " + str(dil_points))
 
-	print(column_counter[dil_points])
+#	print(column_counter[dil_points])
 
 	#create the worklist and write the headers
 	worklist_to_write = []
@@ -220,26 +220,26 @@ def readCSVFile2(FileName, instrument, dil_points, volume, worklist):
 		df_platemap.to_excel(writer, sheet_name='Platemap', header=False, index=False)
 
 
-def Main():
-	print("Started")
-
+#def Main():
+#	print("Started")
+#
 	# calling the getFileName function and
 	# storing its returned value in the output variable
-	FileName, instrument, dil_points, volume = getParams()
+#	FileName, instrument, dil_points, volume = getParams()
 
 	#extracts the root file name and appends "worklist" or "platemap" onto it
-	worklist=re.findall("(\S+).csv", FileName)[0] + "-worklist.xlsx"
+#	worklist=re.findall("(\S+).csv", FileName)[0] + "-worklist.xlsx"
 
-	print(worklist)
-	print(platemap)
+#	print(worklist)
+#	print(platemap)
 
 	#read a CSV through regular file reader
 	#readCSVFile(FileName)
 
 	#read a CSV using pandas
-	readCSVFile2(FileName, instrument, dil_points, volume, worklist)
+#	readCSVFile2(FileName, instrument, dil_points, volume, worklist)
 
 # now we are required to tell Python
 # for 'Main' function existence
 #if __name__=="__main__":
-Main()
+#Main()

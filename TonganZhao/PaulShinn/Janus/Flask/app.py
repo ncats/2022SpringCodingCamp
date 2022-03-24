@@ -33,14 +33,16 @@ def display_file():
         volume=request.form.get("Volume")
         dil_points=request.form.get("dil_points")
         instrument=request.form.get("instrument")
+        filename = app.config['UPLOAD_FOLDER'] + filename
 
         #extracts the root file name and appends "worklist" or "platemap" onto it
         worklist=re.findall("(\S+).csv", str(filename))[0] + "-worklist.xlsx"
 
-        janus.readCSVFile2(filename, instrument, dil_points, volume, worklist)
+        janus.readCSVFile2(filename, instrument, int(dil_points), volume, worklist)
 
-        return str(volume) + str(dil_points) + str(instrument) +str(filename)
-        
+        #return volume + dil_points + instrument + filename
+        return worklist + " created!"
+
     return render_template('upload.html', content=content) 
 
 if __name__ == '__main__':
