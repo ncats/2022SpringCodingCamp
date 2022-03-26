@@ -26,9 +26,9 @@ namespace ETL_Playground
 			return String.Join("/", pieces.ToArray());
 		}
 
-		public string fetchDetails(string name)
+		public dynamic fetchDetails(string name)
 		{
-			string details = null;
+			dynamic details = null;
 			WebRequest request = null;
 			WebResponse response = null;
 			Stream dataStream = null;
@@ -39,7 +39,7 @@ namespace ETL_Playground
 				response = request.GetResponse();
 				dataStream = response.GetResponseStream();
 				reader = new StreamReader(dataStream);
-				details = reader.ReadToEnd();
+				details =   Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(reader.ReadToEnd());
 			}
 			catch(Exception ex)
 			{
