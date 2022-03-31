@@ -40,7 +40,7 @@ import math
 
 
 def getParams():
-	input_file = (input("Enter filename: ") or "map.csv")
+	input_file = (input("Enter filename: [map.csv] ") or "map.csv")
 	instrument = (input("[Janus] or FX?: ") or "Janus")
 	dil_points = int((input("How many dilution points? 7, [11], 22 ") or 11))
 	volume = int((input("What volume? [10] ") or 10))
@@ -230,8 +230,8 @@ def Main():
 	#extracts the root file name and appends "worklist" or "platemap" onto it
 	worklist=re.findall("(\S+).csv", FileName)[0] + "-worklist.xlsx"
 
-	print(worklist)
-	print(platemap)
+	#print(worklist)
+	#print(platemap)
 
 	#read a CSV through regular file reader
 	#readCSVFile(FileName)
