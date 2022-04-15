@@ -67,8 +67,6 @@ class Varian_1H1D(VarianExp):
         Detaildic = dict()
         key_list = ['at', 'd1', 'sfrq', 'reffreq', 'rfp', 'rfl', 'tof', 'rt', 'nt', 'acqtime', 'sw', 'sw_ppm', 'sw_left', 'ppm_lt', 'ppm_rt', 'tot_np', 'real_np', 'gain', 'pw90', 'solvent']
         Detaildic = {key: self.params['key'] for key in key_list}
-        Detaildic['UniqSpecID'] = self.uniqspecid
-        Detaildic['NMRExpType'] = 'QUANT1H1D'
         return Detaildic
     
     ef default_plt_time(self):
